@@ -46,7 +46,7 @@
   {% endfor %}
 
   {% for product in collections.all.products %}
-    {{ product.title }} 
+    {{ product.title }} - {{ product.price }} <br>
   {% endfor %}
 
 {% schema %}

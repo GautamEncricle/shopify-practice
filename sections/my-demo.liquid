@@ -16,8 +16,24 @@
   {{ num1 | divided_by: num2 }}
   {{ num1 }}
   {{ endcon }}
-  {% endcomment %}
+  end comments
+{% endcomment %}
 
+  <!-- if-else statment -->
+
+<h1>if else condition</h1>
+  
+{% assign num1 = 40 %}
+{% assign num2 = 40 %}
+  {% if num1 == num2 %}
+    <p>Both values are same</p>
+  {% else %}
+    <p>Both values are not same</p>
+  {% endif %}
+
+  {% if page_title != 'changed' %}
+      <p>Hello</p>
+  {% endif %}
 
 {% schema %}
   {

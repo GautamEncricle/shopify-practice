@@ -1,6 +1,8 @@
 <div class="page-width" style="width: 80vw; margin: auto: display:flex flex-direction:colums; justify-content: center: align-item:center">
-  <h1>Liquid programming</h1>
-    
+  <h1>Liquid Programming Filter</h1>
+    {% assign text = "This is text title example" %}
+
+  {{ text | append: ", This is added append text" }}
 </div>
 
 {% schema %}

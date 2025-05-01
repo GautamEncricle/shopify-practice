@@ -68,7 +68,7 @@
   {{ names | sort | join: ',' }}
 
    <h3> Remove dublicate value from array </h3>
-  {% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: ", "%}
+  {% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: ","%}
   {{ names_second }} <br>
   {{ names_second | uniq | join: ',' }}
   

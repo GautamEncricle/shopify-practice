@@ -36,6 +36,7 @@
   {% endif %}
 {% endcomment %}
 
+  {% comment %}
   <h1>For loops</h1>
   {% for num in (1..10) %}
     {% if num == 4 %}
@@ -48,6 +49,9 @@
   {% for product in collections.all.products %}
     {{ product.title }} - {{ product.price }} <br>
   {% endfor %}
+  {% endcomment %}
+
+  <h1> Array </h1>
 
 {% schema %}
   {

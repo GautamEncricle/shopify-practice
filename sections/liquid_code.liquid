@@ -13,6 +13,10 @@
 
   <!-- my using this we can create dynamic url -->
   {{ url | append:'.html' }} 
+
+  <!-- prepend: assign value before the value  -->
+  {% assign url1 = ".html" %}
+  {{ url1 | prepend: "/pages/about" }}
   
 </div>
 

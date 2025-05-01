@@ -10,7 +10,8 @@
 {
   "sections": {
     "main": {
-      "type": "liquid_code",
+      //"type" : "my_demo"
+      "type" : "liquid_code",
       "settings": {}
     }
   },

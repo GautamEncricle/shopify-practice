@@ -1,10 +1,12 @@
-<div class="DemoClass">
-  Hello this is first section that i was created
-</div>
+<h1>Variable</h1>
+{{ %  assign text = "this is my first  text"  % }}
 
-{% schema %}
+{{ text }}
+{% comment %}
+  {% schema %}
   {
     "name": "Section name",
     "settings": []
   }
-{% endschema %}
+  {% endschema %}
+{% endcomment %}

@@ -3,6 +3,11 @@
     {% assign text = "This is text title example" %}
 
   {{ text | append: ", This is added append text" }}
+  
+  <!-- Add page infromation in appended text -->
+  {% assign title = page_title %}
+  {{ title }}
+  
 </div>
 
 {% schema %}

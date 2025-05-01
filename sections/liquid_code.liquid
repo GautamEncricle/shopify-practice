@@ -18,7 +18,7 @@
   {% assign domain = "www.baggy-house.com" %}
   {{ url | prepend: domain }}
 
-  {% assign price = product.price %}
+  {% assign price = product.price | money %}
 
   <p>Price: {{ price }}</p>
   

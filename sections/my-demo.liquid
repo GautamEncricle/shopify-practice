@@ -1,5 +1,7 @@
 <div class="display:flex; justify-content:center; width: 80vw; hight: 50vh">
-<h1>Varibale</h1>
+
+  {% comment %}
+    <h1>Varibale</h1>
 {% assign text = "this is first text that i wrote" %}
 
 {{ text }}
@@ -13,6 +15,9 @@
   {{ num1 | times: num2 }}
   {{ num1 | divided_by: num2 }}
   {{ num1 }}
+  {{ endcon }}
+  {% endcomment %}
+
 
 {% schema %}
   {

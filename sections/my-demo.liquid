@@ -70,7 +70,14 @@
    <h3> Remove dublicate value from array </h3>
   {% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: ","%}
   {{ names_second }} <br>
+  
   {{ names_second | uniq | join: "," }}
+  {% assign age = "19, 22, 25, 19" %}
+
+  {% assign results = name | concat : names %}
+{% for result in results %}
+    {{ result }}<br>
+{% endfor %}
   
 
 {% schema %}

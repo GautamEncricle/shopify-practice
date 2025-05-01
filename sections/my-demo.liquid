@@ -20,9 +20,9 @@
 {% endcomment %}
 
   <!-- if-else statment -->
-
-<h1>if else condition</h1>
   
+{% comment %}
+<h1>if else condition</h1>
 {% assign num1 = 40 %}
 {% assign num2 = 40 %}
   {% if num1 == num2 %}
@@ -34,6 +34,16 @@
   {% if page_title != 'changed' %}
       <p>Hello</p>
   {% endif %}
+{% endcomment %}
+
+  <h1>For loops</h1>
+  {% for num in (1..10) %}
+    {% if num == 4 %}
+      {% continue %}
+    {% else %}
+      num <br>
+    {% endif %}
+  {% endfor %}
 
 {% schema %}
   {

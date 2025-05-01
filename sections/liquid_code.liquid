@@ -8,6 +8,11 @@
   {% assign title = page_title %}
   <p>This is {{ title }} page</p>
   
+  <!-- Why they use append ? ans this quistion by practicle -->
+  {% assign url = "/pages/mypage" %}
+
+  {{ url | append:'.html' }}
+  
 </div>
 
 {% schema %}

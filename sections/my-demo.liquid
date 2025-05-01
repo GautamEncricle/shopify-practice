@@ -53,7 +53,10 @@
 
   <h1> Array </h1>
   {% assign names = "Gautam, vivek, khushali, vikita" | split: "," %}
-  
+
+  {% for name in names %}
+    {name} <br>
+  {% endfor %}
     {{ names }}
 
 {% schema %}

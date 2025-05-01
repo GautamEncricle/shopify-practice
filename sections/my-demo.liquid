@@ -61,8 +61,11 @@
 
   <h2>Array filter </h2>
 
-  <h3> Reverse the Array </h3>
+    <h3> Reverse the Array </h3>
   {{ names | reverse | join: ',' }}
+
+  <h3> Sort the Array </h3>
+  {{ names | sort | join: ',' }}
 
 {% schema %}
   {

@@ -15,8 +15,8 @@
   {{ url | append:'.html' }}  <br>
 
   <!-- prepend: assign value before the value  -->
-  {% assign url1 = ".html" %}
-  {{ url1 | prepend: "/pages/about" }}
+  {% assign domain = "www.baggy-house.com/" %}
+  {{ domain | prepend: url }}
   
 </div>
 

@@ -51,33 +51,34 @@
   {% endfor %}
   {% endcomment %}
 
-  <h1> Array </h1>
-  {% assign names = "Gautam, vivek, khushali, vikita" | split: "," %}
+<h1> Array </h1>
+{% assign names = "Gautam, vivek, khushali, vikita" | split: "," %}
 
-  {% for name in names %}
-   Hi {{ name}}  <br>
-  {% endfor %}
-    {{ names }}
-
-  <h2>Array filter </h2>
-
-    <h3> Reverse the Array </h3>
-  {{ names | reverse | join: ',' }}
-
-  <h3> Sort the Array </h3>
-  {{ names | sort | join: ',' }}
-
-   <h3> Remove dublicate value from array </h3>
-  {% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: ","%}
-  {{ names_second }} <br>
-  
-  {{ names_second | uniq | join: "," }}
-  {% assign age = "19, 22, 25, 19" | split: "," %}
-
-  {% assign results = name | concat : names %}
-{% for result in results %}
-    {{ result }}<br>
+{% for name in names %}
+  Hi {{ name }}<br>
 {% endfor %}
+
+{{ names }}
+
+<h2>Array filter</h2>
+
+<h3>Reverse the Array</h3>
+{{ names | reverse | join: ',' }}
+
+<h3>Sort the Array</h3>
+{{ names | sort | join: ',' }}
+
+<h3>Remove Duplicate Values</h3>
+{% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: "," %}
+Original: {{ names_second }}<br>
+Unique: {{ names_second | uniq | join: "," }}
+
+<h3>Concatenate Two Arrays</h3>
+{% assign results = names_second | concat: names %}
+{% for result in results %}
+  {{ result }}<br>
+{% endfor %}
+
   
 
 {% schema %}

@@ -17,6 +17,10 @@
   <!-- prepend: assign value before the value  -->
   {% assign domain = "www.baggy-house.com" %}
   {{ url | prepend: domain }}
+
+  {% assign price = product.price | money %}
+
+  {{ price }}
   
 </div>
 

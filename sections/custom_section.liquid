@@ -1,6 +1,17 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Custom section",
+
+  "settings": [
+    {
+      "type": "text",
+      "id" : "textlabel",
+      "default": "Enter some text here.",
+      "label" : "Heading"
+    }
+  ],
+  "presets": [{
+    "name" : "Custom section",
+  }]
+}
 {% endschema %}

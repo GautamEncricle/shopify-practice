@@ -288,26 +288,26 @@
         "padding_bottom": 48
       }
     },
-    "rich_text_KbnyA9": {
+    "rich_text_k8W6qB": {
       "type": "rich-text",
       "blocks": {
-        "heading_NKMAYH": {
+        "heading_cqL36j": {
           "type": "heading",
           "settings": {
-            "heading": "It's our story",
+            "heading": "Talk about your brand",
             "heading_size": "h1"
           }
         },
-        "text_xCB6CG": {
+        "text_tKzQ34": {
           "type": "text",
           "settings": {
-            "text": "<p>Hello guys, this is our story for make better exprince with affordable price. And our cors is make trust of our customer so don't worry about quality. </p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
           }
         },
-        "button_F3YDwe": {
+        "button_pkVXfW": {
           "type": "button",
           "settings": {
-            "button_label": "Know more about",
+            "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
             "button_label_2": "",
@@ -317,15 +317,15 @@
         }
       },
       "block_order": [
-        "heading_NKMAYH",
-        "text_xCB6CG",
-        "button_F3YDwe"
+        "heading_cqL36j",
+        "text_tKzQ34",
+        "button_pkVXfW"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-4",
+        "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -340,6 +340,6 @@
     "collage_aVCeGi",
     "featured_collection2",
     "multicolumn2",
-    "rich_text_KbnyA9"
+    "rich_text_k8W6qB"
   ]
 }

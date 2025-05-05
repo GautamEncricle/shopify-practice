@@ -5,17 +5,13 @@
     <p class="product-price">{{ product.price | money }}</p>
   </a>
 
-  {% assign available_variant = null %}
-  {% for v in product.variants %}
-    {% if v.available %}
-      {% assign available_variant = v %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-
-  {% if available_variant %}
+  {% if product.available %}
     <form method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ available_variant.id }}">
+      {% if product.has_only_default_variant %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {% else %}
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      {% endif %}
       <button type="submit" class="add-to-card-btn">Add to Cart</button>
     </form>
   {% else %}

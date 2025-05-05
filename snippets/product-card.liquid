@@ -3,22 +3,22 @@
     <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
     <h3 class="product-title">{{ product.title }}</h3>
     <p class="product-price">{{ product.price | money }}</p>
-
-    {% assign available_variant = null %}
-    {% for v in product.variants %}
-      {% if v.available %}
-        {% assign available_variant = v %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-
-    {% if available_variant %}
-      <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ available_variant.id }}">
-        <button type="submit" class="add-to-card-btn">Add to Cart</button>
-      </form>
-    {% else %}
-      <p class="sold-out">Sold out</p>
-    {% endif %}
   </a>
+
+  {% assign available_variant = null %}
+  {% for v in product.variants %}
+    {% if v.available %}
+      {% assign available_variant = v %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if available_variant %}
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ available_variant.id }}">
+      <button type="submit" class="add-to-card-btn">Add to Cart</button>
+    </form>
+  {% else %}
+    <p class="sold-out">Sold out</p>
+  {% endif %}
 </div>

@@ -3,7 +3,8 @@
 
   <!-- Only show the collection title -->
   <h2 class="collection-title">{{ collection.title }}</h2>
-  {% render 'custom-data' %}
+  {% assign VarName = 'Testing data' %}
+  {% render 'custom-data', VarDatatosend: VarName %}
 
   <!-- Show products (optional, but part of a product section) -->
   <div

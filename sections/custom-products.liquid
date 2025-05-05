@@ -1,11 +1,20 @@
 {% schema %}
 {
   "name": "Custom products",
-  "settings": [{
-    "type": "collection",
-    "id": "collection",
-    "label": "Select the collection"
-  },
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select the collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "Product Limit",
+      "max": 7,
+      "min": 1,
+      "default" : 4
+    }
   ]
 }
 {% endschema %}

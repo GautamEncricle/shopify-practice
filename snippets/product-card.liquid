@@ -7,7 +7,7 @@
     {% if product.available %}
       <form method="post" action="/cart/add">
         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit" class="add-tocard-btn">Add to card</button>
+        <button type="submit" class="add-to-card-btn">Add to card</button>
       </form>
     {% else %}
       <p class="sold-out">Sold out</p>

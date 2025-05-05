@@ -1,6 +1,6 @@
 {% if section.settings.collection != blank %}
   {% assign collection = collections[section.settings.collection] %}
-  {% assign products = collection.products | slice: 0, section.settings.product_limit %}
+  {% assign products = collection.products | limit: section.settings.product_limit %}
 
   <div class="product-grid">
     {% for product in products %}
@@ -8,58 +8,116 @@
     {% endfor %}
   </div>
 {% else %}
-  <p>Please select the collection</p>
+  <p class="collection-warning">Please select a collection</p>
 {% endif %}
 
 {% stylesheet %}
-  .product-grid{
+  .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
   }
-  .product-card{
-    border: 1px solid #ccc;
+
+  .product-card {
+    border: 1px solid #e1e1e1;
     padding: 16px;
-    text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .product-title{
-    font-size: 1.1rem;
-    margin: 10px 0;
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
-  .add-to-card-btn{
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .product-title {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #333;
+  }
+
+  .product-price {
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 12px;
+  }
+
+  .product-form {
+    margin-top: 15px;
+  }
+
+  .variant-selector {
+    margin-bottom: 10px;
+  }
+
+  .variant-selector select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
     background-color: #000;
     color: #fff;
-    padding: 8px 12px;
+    padding: 10px;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-  }
-  .sold-out{
-    color: red;
     font-weight: 500;
-    size: 25px;
+    transition: background-color 0.2s;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: #333;
+  }
+
+  .sold-out {
+    color: #d32f2f;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .collection-warning {
+    text-align: center;
+    color: #666;
+    padding: 20px;
   }
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "Custom products",
+  "name": "Custom Products",
   "settings": [
     {
       "type": "collection",
       "id": "collection",
-      "label": "Select the collection"
+      "label": "Select collection"
     },
-   {
-      "type": "number",
+    {
+      "type": "range",
       "id": "product_limit",
-      "label": "Number of Products",
-      "default": 4
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Number of products to show"
     }
   ],
   "presets": [
     {
-      "name": "Custom Products"
+      "name": "Custom Products",
+      "category": "Collection"
     }
   ]
 }

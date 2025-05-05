@@ -1,3 +1,10 @@
+{% if section.settings.collection != blank %}
+  {% assign collection = collection[section.settings.collection] %}
+  {% assign products = collection.products | slice: 0, section.settings.product_limit %}
+
+  <div class="product-grid"></div>
+{% endif %}
+
 {% schema %}
 {
   "name": "Custom products",
@@ -7,14 +14,12 @@
       "id": "collection",
       "label": "Select the collection"
     },
-    {
-      "type": "range",
+   {
+      "type": "number",
       "id": "product_limit",
-      "label": "Product Limit",
-      "max": 7,
-      "min": 1,
-      "default" : 4
-    }
+      "label": "Number of Products",
+      "default": 4
+    },
   ],
   "presets": [
     {

@@ -1,0 +1,32 @@
+<div class="page-width" style="width: 80vw; margin: auto: display:flex flex-direction:colums; justify-content: center: align-item:center">
+  <h1>Liquid Programming Filter</h1>
+    {% assign text = "This is text title example" %}
+
+  {{ text | append: ", This is added append text" }}
+  
+  <!-- Add page infromation in appended text -->
+  {% assign title = page_title %}
+  <p>This is {{ title }} page</p>
+  
+  <!-- Why they use append ? ans this quistion by practicle -->
+  {% assign url = "/pages/mypage" %}
+
+  <!-- my using this we can create dynamic url -->
+  {{ url | append:'.html' }}  <br>
+
+  <!-- prepend: assign value before the value  -->
+  {% assign domain = "www.baggy-house.com" %}
+  {{ url | prepend: domain }}
+
+  {% assign price = product.price | money %}
+
+  <p>Price: {{ price }}</p>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Liquid-code",
+    "settings": []
+  }
+{% endschema %}

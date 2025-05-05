@@ -31,6 +31,7 @@
               >
                 {{ block.settings.heading }}
               </h2>
+              <p>{{ block.settings.sub_heading }}</p>
             {%- when 'caption' -%}
               <p
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -193,6 +194,12 @@
           "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
         },
         {
+          "type": "inline_richtext",
+          "id": "sub_heading",
+          "default": "please enter sub heading here.",
+          "label": "sub heading"
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "options": [
@@ -292,7 +299,7 @@
         {
          "type": "header",
          "content": "t:sections.rich-text.blocks.buttons.settings.header_button1.content"
-        },        
+        },
         {
           "type": "text",
           "id": "button_label",
@@ -314,7 +321,7 @@
         {
          "type": "header",
          "content": "t:sections.rich-text.blocks.buttons.settings.header_button2.content"
-        },          
+        },
         {
           "type": "text",
           "id": "button_label_2",

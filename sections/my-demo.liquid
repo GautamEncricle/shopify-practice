@@ -1,0 +1,90 @@
+<div style="width:80vw; margin-auto;display: flex;flex-direction: column;justify-content: center;align-content: center;align-items: center;">
+
+  {% comment %}
+    <h1>Varibale</h1>
+{% assign text = "this is first text that i wrote" %}
+
+{{ text }}
+
+{% assign num1 = 40 %}
+{% assign num2 = 40 %}
+<br>
+<br>
+  {{ num1 | plus: num2 }}
+  {{ num1 | minus: num2 }}
+  {{ num1 | times: num2 }}
+  {{ num1 | divided_by: num2 }}
+  {{ num1 }}
+  {{ endcon }}
+  end comments
+{% endcomment %}
+
+  <!-- if-else statment -->
+  
+{% comment %}
+<h1>if else condition</h1>
+{% assign num1 = 40 %}
+{% assign num2 = 40 %}
+  {% if num1 == num2 %}
+    <p>Both values are same</p>
+  {% else %}
+    <p>Both values are not same</p>
+  {% endif %}
+
+  {% if page_title != 'changed' %}
+      <p>Hello</p>
+  {% endif %}
+{% endcomment %}
+
+  {% comment %}
+  <h1>For loops</h1>
+  {% for num in (1..10) %}
+    {% if num == 4 %}
+      {% continue %}
+    {% else %}
+      {{ num }} <br>
+    {% endif %}
+  {% endfor %}
+
+  {% for product in collections.all.products %}
+    {{ product.title }} - {{ product.price }} <br>
+  {% endfor %}
+  {% endcomment %}
+
+<h1> Array </h1>
+{% assign names = "Gautam, vivek, khushali, vikita" | split: "," %}
+
+{% for name in names %}
+  Hi {{ name }}<br>
+{% endfor %}
+
+{{ names }}
+
+<h2>Array filter</h2>
+
+<h3>Reverse the Array</h3>
+{{ names | reverse | join: ',' }}
+
+<h3>Sort the Array</h3>
+{{ names | sort | join: ',' }}
+
+<h3>Remove Duplicate Values</h3>
+{% assign names_second = 'Gautam, Vivek, Nikita, Gautam, Mayur' | split: "," %}
+Original: {{ names_second }}<br>
+Unique: {{ names_second | uniq | join: "," }}
+
+<h3>Concatenate Two Arrays</h3>
+{% assign results = names_second | concat: names %}
+{% for result in results %}
+  {{ result }}<br>
+{% endfor %}
+
+  
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+</div>

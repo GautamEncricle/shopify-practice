@@ -1,9 +1,9 @@
 {% if section.settings.collection != blank %}
   {% assign collection = collections[section.settings.collection] %}
-  {% assign products = collection.products | limit: section.settings.product_limit %}
+  {% assign products = collection.products %}
 
   <div class="product-grid">
-    {% for product in products %}
+    {% for product in products limit: section.settings.product_limit %}
       {% render 'product-card', product: product %}
     {% endfor %}
   </div>

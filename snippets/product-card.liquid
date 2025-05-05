@@ -1,14 +1,20 @@
 <div class="product-card">
   <a href="{{ product.url }}">
-    <img src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.title }}">
+    <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}">
     <h3 class="product-title">{{ product.title }}</h3>
     <p class="product-price">{{ product.price | money }}</p>
 
-    {% assign variant = product.variants.first %}
+    {% assign available_variant = null %}
+    {% for v in product.variants %}
+      {% if v.available %}
+        {% assign available_variant = v %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
 
-    {% if variant.available %}
+    {% if available_variant %}
       <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ variant.id }}">
+        <input type="hidden" name="id" value="{{ available_variant.id }}">
         <button type="submit" class="add-to-card-btn">Add to Cart</button>
       </form>
     {% else %}

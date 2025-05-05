@@ -359,12 +359,12 @@
         "font_color": "#ffffff"
       }
     },
-    "custom_products_9YGxCN": {
+    "custom_products_qP9Ffe": {
       "type": "custom-products",
       "name": "Custom Products",
       "settings": {
-        "collection": "compact-carry-kits",
-        "product_limit": 6
+        "collection": "coolers-insulated-bags",
+        "product_limit": 4
       }
     }
   },
@@ -378,6 +378,6 @@
     "multicolumn2",
     "featured_collection2",
     "custom_product_list_eMNfaW",
-    "custom_products_9YGxCN"
+    "custom_products_qP9Ffe"
   ]
 }

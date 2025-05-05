@@ -4,10 +4,12 @@
     <h3 class="product-title">{{ product.title }}</h3>
     <p class="product-price">{{ product.price | money }}</p>
 
-    {% if product.available %}
+    {% assign variant = product.variants.first %}
+
+    {% if variant.available %}
       <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit" class="add-to-card-btn">Add to card</button>
+        <input type="hidden" name="id" value="{{ variant.id }}">
+        <button type="submit" class="add-to-card-btn">Add to Cart</button>
       </form>
     {% else %}
       <p class="sold-out">Sold out</p>

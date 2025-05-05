@@ -1,3 +1,16 @@
 <div class="product-card">
-  <a href="{{ product.url }}"> </a>
+  <a href="{{ product.url }}">
+    <img src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.title }}">
+    <h3 class="product-title">{{ product.title }}</h3>
+    <p class="product-price">{{ product.price | money }}</p>
+
+    {% if product.available %}
+      <form method="post" action="/card/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="add-tocard-btn">Add to card</button>
+      </form>
+    {% else %}
+      <p class="sold-out">Sold out</p>
+    {% endif %}
+  </a>
 </div>

@@ -1,6 +1,11 @@
 <div class="feature-card">
   <div class="feature-icon">
-    {{ icon | placeholder_svg_tag }}
+    {% assign valid_icons = 'image,product,collection,avatar,store,text,logo' | split: ',' %}
+    {% if icon != blank and valid_icons contains icon %}
+      {{ icon | placeholder_svg_tag }}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag }}
+    {% endif %}
   </div>
   <h3>{{ title }}</h3>
   <p>{{ description }}</p>

@@ -11,7 +11,13 @@
   "sections": {
     "custom-hero": {
       "type": "custom-hero",
-      "settings": {}
+      "settings": {
+        "heading": "Welcome to our store",
+        "sub_heading": "Discover amazing products",
+        "button_text": "Shop",
+        "button_url": "",
+        "bg_color": "#f4f4f4"
+      }
     },
     "custom-features": {
       "type": "custom-features",
@@ -19,7 +25,7 @@
     }
   },
   "order": [
-    "custom-hero",
-    "custom-features"
+    "custom-features",
+    "custom-hero"
   ]
 }

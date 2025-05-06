@@ -9,15 +9,17 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
+    "custom-hero": {
+      "type": "custom-hero",
+      "settings": {}
+    },
+    "custom-features": {
+      "type": "custom-features",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "custom-hero",
+    "custom-features"
   ]
 }

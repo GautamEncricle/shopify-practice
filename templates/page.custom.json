@@ -12,20 +12,33 @@
     "custom-hero": {
       "type": "custom-hero",
       "settings": {
-        "heading": "Welcome to our store",
+        "heading": "Hi 👋, Welcome to our store.",
         "sub_heading": "Discover amazing products",
         "button_text": "Shop",
-        "button_url": "",
+        "button_url": "shopify://collections/all",
         "bg_color": "#f4f4f4"
       }
     },
     "custom-features": {
       "type": "custom-features",
+      "blocks": {
+        "feature_FM3iNH": {
+          "type": "feature",
+          "settings": {
+            "icon": "",
+            "heading": "New arrivals",
+            "description": "Get your order delivered in 2-3 days"
+          }
+        }
+      },
+      "block_order": [
+        "feature_FM3iNH"
+      ],
       "settings": {}
     }
   },
   "order": [
-    "custom-features",
-    "custom-hero"
+    "custom-hero",
+    "custom-features"
   ]
 }
